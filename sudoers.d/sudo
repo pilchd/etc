@@ -1,0 +1,14 @@
+Defaults insults
+Defaults passprompt        = "[sudo] it'll take more than that, %p: "
+Defaults passwd_timeout    = 0
+Defaults timestamp_timeout = 15
+Defaults verifypw          = any
+
+Defaults env_keep += "EDITOR"
+
+Cmnd_Alias MEDIA   = /usr/bin/cryptsetup close *, /usr/bin/fdisk -l, /usr/bin/umount *
+Cmnd_Alias NETWORK = /usr/bin/systemctl start openvpn-client@*.service, /usr/bin/systemctl stop openvpn-client@*.service, /usr/bin/systemctl status openvpn-client@*.service
+Cmnd_Alias SYSTEM  = /usr/bin/pacman -Fy, /usr/bin/pacman -Syu
+
+nic ALL = (ALL) ALL
+nic ALL = (root) NOPASSWD: MEDIA, NETWORK, SYSTEM

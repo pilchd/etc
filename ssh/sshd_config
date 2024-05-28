@@ -1,0 +1,25 @@
+## Configuration fragments
+
+Include /etc/ssh/sshd_config.d/*.conf
+
+
+## Authentication
+
+PasswordAuthentication no
+
+
+## Subsystems
+
+# Enable SFTP with logging
+Subsystem sftp /usr/lib/openssh/sftp-server -l INFO
+
+
+## Users
+
+AllowUsers *@10.* *@192.168.*
+
+
+## User overrides
+
+Match User nic
+    PermitTunnel yes

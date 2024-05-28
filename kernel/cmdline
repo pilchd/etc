@@ -1,0 +1,1 @@
+cryptdevice=PARTLABEL=Nic-Betty:Nic-Betty:allow-discards cryptkey=LABEL=NIC-KEY:auto:/NIC-KEY.bin root=/dev/mapper/Nic-Betty rootflags=subvol=root rw resume=/dev/mapper/Nic-Betty resume_offset=533760 consoleblank=900 nowatchdog

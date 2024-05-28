@@ -1,0 +1,26 @@
+# Static information about the filesystems.
+# See fstab(5) for details.
+
+
+# <file system> <dir> <type> <options> <dump> <pass>
+
+# ESP
+LABEL=ESP             /efi/              vfat  noatime             0 2
+
+# root
+/dev/mapper/Nic-Betty /                  btrfs subvol=root         0 0
+
+# swap
+/dev/mapper/Nic-Betty /swap              btrfs subvol=swap,noatime 0 0
+
+# swapfile
+/swap/swapfile        none               swap  defaults            0 0
+
+# db
+/dev/mapper/Nic-Betty /var/lib/postgres/ btrfs subvol=db           0 0
+
+# home
+/dev/mapper/Nic-Betty /home/             btrfs subvol=home         0 0
+
+# snapshots
+/dev/mapper/Nic-Betty /snapshots/        btrfs subvol=snapshots    0 0

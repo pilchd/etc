@@ -1,0 +1,4 @@
+#!/bin/sh
+set -e
+
+cp --verbose "$2" /efi/EFI/Linux/debian/initrd.img
